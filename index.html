@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <div class="parent">
+        <!--above is the parent div that holds the entire grid-->
+        <div class="div1">
+            <!--header-->
+            <header>
+                <h1>Weather Dashboard</h1>
+                <p>Where will you be? Get the weather for your upcoming travels.</p>
+                <!-- displays today's date and time-->
+                <div class="time" id="time"></div>
+            </header>
+            <!--Weather card that will  show the current weather in the city chosen-->
+            <div class="bigWeatherCard">
+                <div class="cityName" id="cityName"> </div>
+                <div class="todayDescription" id="todayDescription"> </div>
+                <div class="todayIcon" id="todayIcon"> </div>
+                <div class="todayTemp" id="todayTemp"> </div>
+                <div class="todayHumidity" id="todayHumidity"> </div>
+                <div class="todayWind" id="todayWind"> </div>
+            </div>
+
+
+        </div>
+        <!--Shows the first FUTURE date weather, one day from now-->
+        <div class="div3" id="div3">
+            <div class="futureDate1" id="futureDate1"></div>
+            <div class="futureDescription1" id="futureDescription1"></div>
+            <div class="futureIcon1" id="futureIcon1"></div>
+            <div class="futureTemp1" id="futureTemp1"></div>
+            <div class="futureHumidity1" id="futureHumidity1"></div>
+            <div class="futureWindSpeed1" id="futureWindSpeed1"></div>
+
+
+        </div>
+
+        <!-- Shows weather 2 days from now-->
+        <div class="div2">
+            <div class="futureDate2" id="futureDate2"></div>
+            <div class="futureDescription2" id="futureDescription2"></div>
+            <div class="futureIcon2" id="futureIcon2"></div>
+            <div class="futureTemp2" id="futureTemp2"></div>
+            <div class="futureHumidity2" id="futureHumidity2"></div>
+            <div class="futureWindSpeed2" id="futureWindSpeed2"></div>
+        </div>
+
+
+        <!--shows weather 3 days from now-->
+        <div class="div4">
+            <div class="futureDate3" id="futureDate3"></div>
+            <div class="futureDescription3" id="futureDescription3"></div>
+            <div class="futureIcon3" id="futureIcon3"></div>
+            <div class="futureTemp3" id="futureTemp3"></div>
+            <div class="futureHumidity3" id="futureHumidity3"></div>
+            <div class="futureWindSpeed3" id="futureWindSpeed3"></div>
+        </div>
+
+        <!-- shows weather 4 days from now-->
+        <div class="div5">
+            <div class="futureDate4" id="futureDate4"></div>
+            <div class="futureDescription4" id="futureDescription4"></div>
+            <div class="futureIcon4" id="futureIcon4"></div>
+            <div class="futureTemp4" id="futureTemp4"></div>
+            <div class="futureHumidity4" id="futureHumidity4"></div>
+            <div class="futureWindSpeed4" id="futureWindSpeed4"></div>
+        </div>
+
+        <!-- shows weather 5 days from now (last date available)-->
+        <div class="div6">
+            <div class="futureDate5" id="futureDate5"></div>
+            <div class="futureDescription5" id="futureDescription5"></div>
+            <div class="futureIcon5" id="futureIcon5"></div>
+            <div class="futureTemp5" id="futureTemp5"></div>
+            <div class="futureHumidity5" id="futureHumidity5"></div>
+            <div class="futureWindSpeed5" id="futureWindSpeed5"></div>
+        </div>
+        <!--the search text-input and the button-->
+        <div class="div7">
+            <form>
+                <input id="input" type="text" class="inputValue" placeholder="search for a city">
+                <div class="buttondiv">
+                    <submit id="submit">search</submit>
+                </div>
+
+            </form>
+            <!-- history, the past 5 searched cities-->
+            <div class="div8" id="historyCard"> </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
