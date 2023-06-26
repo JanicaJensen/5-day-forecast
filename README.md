@@ -1,102 +1,79 @@
-# 06 Server-Side APIs: Weather Dashboard
+# 5 Day Weather Forecast
+A minimalistic webpage that displays the weather for the upcoming 5 days in the city of your choice.
 
-## Your Task
+## Description
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+This is a webapp made using CSS, JavaScript and HTML. The purpose is to view weather predictions for the next 5 days as well as the current weather in a city of one's choice. It utilizes 3rd party API from OpenWeather. 
 
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The base URL should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
+## Table of Contents
 
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
+1. [Team](#team)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Tests](#tests)
+5. [Bugs](#bugs)
+6. [Questions](#questions)
+7. [Contribution Guidelines](#contribution-guidelines)
+8. [License](#license)
 
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+## Team
 
-## User Story
+---
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+The app was created by myself, Janica Jackson. Though there are many just like it out there.
 
-## Acceptance Criteria
+_Other tools utilized:_
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+OpenWeather API: https://openweathermap.org/
 
-## Mock-Up
+## Installation
 
-The following image shows the web application's appearance and functionality:
+---
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+One must navigate to the GitHub pages URL in order to view the application. There is no further installation required by the user. 
 
-## Grading Requirements
+## Usage
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+---
+The user will be presented with a search bar in which they should type the name of a city. This should be spelled correctly in order to obtain accurate results. Once the user has typed a city, they must click the "search" button. Upon clicking the search button, the user will be presented with the weather for today in the desired city, and then 5 boxes beneath it will display the weather for the upcoming days. The user will be able to see the current temperature, the humidity, the wind speed, and an icon that represents the current conditions with a minimalistic logo (provided by OpenWeather) and a one - two word description of the conditions.
+The user will also be presented with a list of th elast 5 cities they searched, each of which are clickable and will generate the weather readouts for the chosen city.
 
-This Challenge is graded based on the following criteria: 
+## Tests
 
-### Technical Acceptance Criteria: 40%
+---
 
-* Satisfies all of the above acceptance criteria plus the following:
+There are no tests for this app. 
 
-    * Uses the OpenWeather API to retrieve weather data.
 
-    * Uses `localStorage` to store persistent data.
+## Bugs
 
-### Deployment: 32%
+---
 
-* Application deployed at live URL.
+There are no actual bugs, the app functions as it should. However, when window size is reduced fully, the 'current conditions' of today's weather will overlap with the name of the city in the bigWeatherCard, this is due to the large size of the cityName element and having used display:grid. It is also not that cute of a page, but the requirements did not state it had to meet any specific design princinples and I am just trying to learn here so, please forgive the black and white. 
 
-* Application loads with no errors.
+In addition, the app only shows the last 5 cities that the user searched, this was an aesthetic choice, as I did not want a huge list running down the page or a scrollbar on the side, so I capped it at 5 cities, this is done in a loop in the JS. 
 
-* Application GitHub URL submitted.
+Also not a bug but something worth mentioning, I'm sure there is a way to make it so that you do not have to write the functions 5 different times to pull JSON from different lists, but I couldn't think of an obvious way to do it that actually worked and it became less time consuming for me to just copy the functions and change the numbers, so that's what I went with. I know there has to be a way to loop it, I just haven't learned it yet. That is why you will see "getWeather", "getFutureWeather1,2,3,4,5" and the same for displayWeather. 
 
-* GitHub repository that contains application code.
+## Questions
 
-### Application Quality: 15%
+---
 
-* Application user experience is intuitive and easy to navigate.
+Please refer any questions to: janicajackson@gmail.com
 
-* Application user interface style is clean and polished.
+**GitHub profile:** https://github.com/janicajensen
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+## Contribution Guidelines
 
-### Repository Quality: 13%
+---
 
-* Repository has a unique name.
+If anyone wishes to contribute to this project, they may find the GitHub repository at https://github.com/JanicaJensen/5-day-forecast and they are welcome to create a fork.
 
-* Repository follows best practices for file structure and naming conventions.
+## License
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+---
 
-* Repository contains multiple descriptive commit messages.
+This project is covered under the MIT license.
+More info can be found by clicking the badge above the description.
 
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
 
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
