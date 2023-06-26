@@ -5,6 +5,8 @@ A minimalistic webpage that displays the weather for the upcoming 5 days in the 
 
 This is a webapp made using CSS, JavaScript and HTML. The purpose is to view weather predictions for the next 5 days as well as the current weather in a city of one's choice. It utilizes 3rd party API from OpenWeather. 
 
+![app](gifs/basefunctionality.png)
+
 ## Table of Contents
 
 1. [Team](#team)
@@ -30,13 +32,15 @@ OpenWeather API: https://openweathermap.org/
 
 ---
 
-One must navigate to the GitHub pages URL in order to view the application. There is no further installation required by the user. 
+One must navigate to the GitHub pages URL in order to view the application. There is no further installation required by the user. The GitHub pages URL can be found here: https://janicajensen.github.io/5-day-forecast/ 
 
 ## Usage
 
 ---
 The user will be presented with a search bar in which they should type the name of a city. This should be spelled correctly in order to obtain accurate results. Once the user has typed a city, they must click the "search" button. Upon clicking the search button, the user will be presented with the weather for today in the desired city, and then 5 boxes beneath it will display the weather for the upcoming days. The user will be able to see the current temperature, the humidity, the wind speed, and an icon that represents the current conditions with a minimalistic logo (provided by OpenWeather) and a one - two word description of the conditions.
+![search a city](gifs/searchacityweather.gif)
 The user will also be presented with a list of th elast 5 cities they searched, each of which are clickable and will generate the weather readouts for the chosen city.
+![view past cities](gifs/viewallcities.gif)
 
 ## Tests
 
