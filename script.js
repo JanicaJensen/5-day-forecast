@@ -6,16 +6,16 @@ var historyCard = document.getElementById('historyCard');
 
 // This displays today's date and time under the header.
 function displayDate() {
-    // get a new date (locale machine date time)
-    var date = new Date();
-    // get the date as a string
-    var n = date.toDateString();
-    // get the time as a string
-    var time = date.toLocaleTimeString();
+  // get a new date (locale machine date time)
+  var date = new Date();
+  // get the date as a string
+  var n = date.toDateString();
+  // get the time as a string
+  var time = date.toLocaleTimeString();
 
-    // find the html element with the id of time
-    // set the innerHTML of that element to the date a space the time
-    document.getElementById('time').innerHTML = n + ' ' + time;
+  // find the html element with the id of time
+  // set the innerHTML of that element to the date a space the time
+  document.getElementById('time').innerHTML = n + ' ' + time;
 
 }
 
@@ -23,20 +23,20 @@ function displayDate() {
 
 // This function is getting the current weather in the city chosen (currentCity)
 function getWeather(lat, lon) {
-  var weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
+  var weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
 
   fetch(weatherURL)
-      .then(response => response.json())
-      .then(data => {
-          const date = data.list[0].dt_txt.substring(5, 10);
-          const temp = data.list[0].main.temp;
-          const humidity = data.list[0].main.humidity;
-          const windSpeed = data.list[0].wind.speed;
-          const description = data.list[0].weather[0].description;
-          const icon = data.list[0].weather[0].icon;
-          // within this function, it is calling the displayWeather function and passing through the variables.
-          displayWeather(temp, icon, description, humidity, windSpeed);
-      });
+    .then(response => response.json())
+    .then(data => {
+      const date = data.list[0].dt_txt.substring(5, 10);
+      const temp = data.list[0].main.temp;
+      const humidity = data.list[0].main.humidity;
+      const windSpeed = data.list[0].wind.speed;
+      const description = data.list[0].weather[0].description;
+      const icon = data.list[0].weather[0].icon;
+      // within this function, it is calling the displayWeather function and passing through the variables.
+      displayWeather(temp, icon, description, humidity, windSpeed);
+    });
 }
 // this is the function that displays the weather on the bigWeatherCard for TODAY'S weather in the searched city
 function displayWeather(temp, icon, description, humidity, windSpeed) {
@@ -178,161 +178,161 @@ function displayFutureWeather5(date, description, icon, temp, humidity, windSpee
 
 // get future weather for the next day
 function getFutureWeather1(lat, lon) {
-  var weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
+  var weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
   console.log(weatherURL);
 
   fetch(weatherURL)
-      .then(response => response.json())
-      .then(data => {
-          const date = data.list[5].dt_txt.substring(5, 10);
+    .then(response => response.json())
+    .then(data => {
+      const date = data.list[5].dt_txt.substring(5, 10);
 
-          const description = data.list[5].weather[0].description;
+      const description = data.list[5].weather[0].description;
 
-          const icon = data.list[5].weather[0].icon;
+      const icon = data.list[5].weather[0].icon;
 
-          const temp = data.list[5].main.temp;
+      const temp = data.list[5].main.temp;
 
-          const humidity = data.list[5].main.humidity;
+      const humidity = data.list[5].main.humidity;
 
-          const windSpeed = data.list[5].wind.speed;
+      const windSpeed = data.list[5].wind.speed;
 
-          displayFutureWeather1(date, description, icon, temp, humidity, windSpeed);
-          // displays the future weather for 1 day from now
-      })
+      displayFutureWeather1(date, description, icon, temp, humidity, windSpeed);
+      // displays the future weather for 1 day from now
+    })
 
 }
 
 // get future weather for 2 days from now
 function getFutureWeather2(lat, lon) {
-  var weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
+  var weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
   console.log(weatherURL);
 
   fetch(weatherURL)
-      .then(response => response.json())
-      .then(data => {
-          const date = data.list[10].dt_txt.substring(5, 10);
+    .then(response => response.json())
+    .then(data => {
+      const date = data.list[10].dt_txt.substring(5, 10);
 
-          const description = data.list[10].weather[0].description;
+      const description = data.list[10].weather[0].description;
 
-          const icon = data.list[10].weather[0].icon;
+      const icon = data.list[10].weather[0].icon;
 
-          const temp = data.list[10].main.temp;
+      const temp = data.list[10].main.temp;
 
-          const humidity = data.list[10].main.humidity;
+      const humidity = data.list[10].main.humidity;
 
-          const windSpeed = data.list[10].wind.speed;
+      const windSpeed = data.list[10].wind.speed;
 
 
-          console.log('2 days from now: ' + date + description + icon + temp + humidity + windSpeed)
-          // displays the future weather for the 2nd day
-          displayFutureWeather2(date, description, icon, temp, humidity, windSpeed);
-      })
+      console.log('2 days from now: ' + date + description + icon + temp + humidity + windSpeed)
+      // displays the future weather for the 2nd day
+      displayFutureWeather2(date, description, icon, temp, humidity, windSpeed);
+    })
 
 }
 
 // get future weather for 3 days from now
 function getFutureWeather3(lat, lon) {
-  var weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
+  var weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
   console.log(weatherURL);
 
   fetch(weatherURL)
-      .then(response => response.json())
-      .then(data => {
-          const date = data.list[20].dt_txt.substring(5, 10);
+    .then(response => response.json())
+    .then(data => {
+      const date = data.list[20].dt_txt.substring(5, 10);
 
-          const description = data.list[20].weather[0].description;
+      const description = data.list[20].weather[0].description;
 
-          const icon = data.list[20].weather[0].icon;
+      const icon = data.list[20].weather[0].icon;
 
-          const temp = data.list[20].main.temp;
+      const temp = data.list[20].main.temp;
 
-          const humidity = data.list[20].main.humidity;
+      const humidity = data.list[20].main.humidity;
 
-          const windSpeed = data.list[20].wind.speed;
+      const windSpeed = data.list[20].wind.speed;
 
 
-          console.log('3 days from now: ' + date + description + icon + temp + humidity + windSpeed)
-          // displays the future weather for the 3rd day
-          displayFutureWeather3(date, description, icon, temp, humidity, windSpeed);
-      })
+      console.log('3 days from now: ' + date + description + icon + temp + humidity + windSpeed)
+      // displays the future weather for the 3rd day
+      displayFutureWeather3(date, description, icon, temp, humidity, windSpeed);
+    })
 
 }
 
 // get future weather for 4 days from now
 function getFutureWeather4(lat, lon) {
-  var weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
+  var weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
   console.log(weatherURL);
 
   fetch(weatherURL)
-      .then(response => response.json())
-      .then(data => {
-          const date = data.list[26].dt_txt.substring(5, 10);
+    .then(response => response.json())
+    .then(data => {
+      const date = data.list[26].dt_txt.substring(5, 10);
 
-          const description = data.list[26].weather[0].description;
+      const description = data.list[26].weather[0].description;
 
-          const icon = data.list[26].weather[0].icon;
+      const icon = data.list[26].weather[0].icon;
 
-          const temp = data.list[26].main.temp;
+      const temp = data.list[26].main.temp;
 
-          const humidity = data.list[26].main.humidity;
+      const humidity = data.list[26].main.humidity;
 
-          const windSpeed = data.list[26].wind.speed;
+      const windSpeed = data.list[26].wind.speed;
 
 
-          console.log('4 days from now: ' + date + description + icon + temp + humidity + windSpeed)
-          // displays future weather 4 days from now
-          displayFutureWeather4(date, description, icon, temp, humidity, windSpeed);
-      })
+      console.log('4 days from now: ' + date + description + icon + temp + humidity + windSpeed)
+      // displays future weather 4 days from now
+      displayFutureWeather4(date, description, icon, temp, humidity, windSpeed);
+    })
 
 }
 
 // get weather for 5 days from now
 function getFutureWeather5(lat, lon) {
-  var weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
+  var weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey2}&units=imperial`;
   console.log(weatherURL);
 
   fetch(weatherURL)
-      .then(response => response.json())
-      .then(data => {
-          const date = data.list[33].dt_txt.substring(5, 10);
+    .then(response => response.json())
+    .then(data => {
+      const date = data.list[33].dt_txt.substring(5, 10);
 
-          const description = data.list[33].weather[0].description;
+      const description = data.list[33].weather[0].description;
 
-          const icon = data.list[33].weather[0].icon;
+      const icon = data.list[33].weather[0].icon;
 
-          const temp = data.list[33].main.temp;
+      const temp = data.list[33].main.temp;
 
-          const humidity = data.list[33].main.humidity;
+      const humidity = data.list[33].main.humidity;
 
-          const windSpeed = data.list[33].wind.speed;
+      const windSpeed = data.list[33].wind.speed;
 
 
-          console.log('5 days from now: ' + date + description + icon + temp + humidity + windSpeed)
-          displayFutureWeather5(date, description, icon, temp, humidity, windSpeed);
-      })
+      console.log('5 days from now: ' + date + description + icon + temp + humidity + windSpeed)
+      displayFutureWeather5(date, description, icon, temp, humidity, windSpeed);
+    })
 
 }
 
 
 // this is getting the coordinates for the city that is searched
 function getCoordinates(currentCity) {
-  var coordinateURL = `http://api.openweathermap.org/geo/1.0/direct?q=${currentCity}&limit=5&appid=${APIKey}`;
+  var coordinateURL = `https://api.openweathermap.org/geo/1.0/direct?q=${currentCity}&limit=5&appid=${APIKey}`;
   console.log(coordinateURL);
   // fetching the coordinates and then passing through the API 
   fetch(coordinateURL)
-      .then(response => response.json())
-      .then(data => {
-          const lat = data[0].lat;
-          const lon = data[0].lon;
-          console.log(lon);
-          console.log(lat);
-          getWeather(lat, lon);
-          getFutureWeather1(lat, lon);
-          getFutureWeather2(lat, lon);
-          getFutureWeather3(lat, lon);
-          getFutureWeather4(lat, lon);
-          getFutureWeather5(lat, lon);
-      })
+    .then(response => response.json())
+    .then(data => {
+      const lat = data[0].lat;
+      const lon = data[0].lon;
+      console.log(lon);
+      console.log(lat);
+      getWeather(lat, lon);
+      getFutureWeather1(lat, lon);
+      getFutureWeather2(lat, lon);
+      getFutureWeather3(lat, lon);
+      getFutureWeather4(lat, lon);
+      getFutureWeather5(lat, lon);
+    })
 
 }
 
@@ -340,34 +340,34 @@ function getCoordinates(currentCity) {
 function addToLocalStorage(cityName) {
   // Check if local storage is supported by the browser
   if (typeof (Storage) !== "undefined") {
-      // Get the existing city names from local storage (if any)
-      var existingCities = localStorage.getItem("cities");
+    // Get the existing city names from local storage (if any)
+    var existingCities = localStorage.getItem("cities");
 
-      // Check if any city names are already stored
-      if (existingCities) {
-          // Parse the existing city names from JSON to an array
-          var citiesArray = JSON.parse(existingCities);
+    // Check if any city names are already stored
+    if (existingCities) {
+      // Parse the existing city names from JSON to an array
+      var citiesArray = JSON.parse(existingCities);
 
-          // Check if citiesArray is an array, if not, convert it into an array
-          if (!Array.isArray(citiesArray)) {
-              citiesArray = [citiesArray];
-          }
-
-          // Add the new city name to the array
-          citiesArray.push(cityName);
-
-          // Store the updated array back in local storage
-          localStorage.setItem("cities", JSON.stringify(citiesArray));
-      } else {
-          // No city names are stored yet, create a new array with the current city name
-          var citiesArray = [cityName];
-
-          // Store the array in local storage
-          localStorage.setItem("cities", JSON.stringify(citiesArray));
+      // Check if citiesArray is an array, if not, convert it into an array
+      if (!Array.isArray(citiesArray)) {
+        citiesArray = [citiesArray];
       }
+
+      // Add the new city name to the array
+      citiesArray.push(cityName);
+
+      // Store the updated array back in local storage
+      localStorage.setItem("cities", JSON.stringify(citiesArray));
+    } else {
+      // No city names are stored yet, create a new array with the current city name
+      var citiesArray = [cityName];
+
+      // Store the array in local storage
+      localStorage.setItem("cities", JSON.stringify(citiesArray));
+    }
   } else {
-      // Local storage is not supported
-      console.log("Local storage is not supported by your browser.");
+    // Local storage is not supported
+    console.log("Local storage is not supported by your browser.");
   }
 }
 
@@ -380,26 +380,26 @@ function updateHistory() {
 
   // Check if any city names are stored
   if (existingCities) {
-      // Parse the existing city names from JSON to an array
-      var citiesArray = JSON.parse(existingCities);
+    // Parse the existing city names from JSON to an array
+    var citiesArray = JSON.parse(existingCities);
 
-      // Slice the array to get only the last 5 city names
-      var lastFiveCities = citiesArray.slice(-5);
+    // Slice the array to get only the last 5 city names
+    var lastFiveCities = citiesArray.slice(-5);
 
-      // Create a list element for each city and append it to the historyCard element
-      lastFiveCities.forEach(function (city) {
-          var listItem = document.createElement("li");
-          listItem.textContent = city;
-          // allows cities to be clicked.
-          listItem.addEventListener('click', function () {
-              console.log('Clicked on a city: ' + city);
-              getCoordinates(listItem.textContent);
-              var cityName = document.getElementById('cityName');
-              cityName.innerHTML = listItem.textContent;
-          });
-
-          historyCard.appendChild(listItem);
+    // Create a list element for each city and append it to the historyCard element
+    lastFiveCities.forEach(function (city) {
+      var listItem = document.createElement("li");
+      listItem.textContent = city;
+      // allows cities to be clicked.
+      listItem.addEventListener('click', function () {
+        console.log('Clicked on a city: ' + city);
+        getCoordinates(listItem.textContent);
+        var cityName = document.getElementById('cityName');
+        cityName.innerHTML = listItem.textContent;
       });
+
+      historyCard.appendChild(listItem);
+    });
   }
 }
 
